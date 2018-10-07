@@ -29,4 +29,11 @@ describe('MedicosComponent', () => {
         componente.agregarMedico();
         expect(spy).toHaveBeenCalled();
     });
+
+    it('Debe agregar un nuevo médico al arreglo de médicos', () => {
+        const medico = { id: 1, nombre: 'Sergio' };
+        spyOn(servicio, 'agregarMedico').and.returnValue(from([medico]));
+        componente.agregarMedico();
+        expect(componente.medicos.indexOf(medico)).toBeGreaterThanOrEqual(0);
+    });
 });
