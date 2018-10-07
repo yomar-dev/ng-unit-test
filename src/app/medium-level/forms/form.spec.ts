@@ -28,7 +28,6 @@ describe('Medium Level - Forms', () => {
 
     it('Password is required', () => {
         const fieldPassword = formComponent.form.get('password');
-        console.log(fieldPassword);
         fieldPassword.setValue('12345');
         expect(fieldPassword.valid).toBeTruthy();
     });
